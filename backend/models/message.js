@@ -4,13 +4,13 @@ const { Schema, model } = mongoose;
 // import model from "./model.js"
 
 const Message = new Schema({
-    from: { type: ObjectId, ref: "User", required: true },
-    to: { type: ObjectId, ref: "Chat", required: true },
+    from: { type: ObjectId, ref: "Snet_User", required: true },
+    to: { type: ObjectId, ref: "Snet_Chat", required: true },
     content: { type: String, required: true },
-    seenBy: [{ type: ObjectId, ref: "User" }],
+    seenBy: [{ type: ObjectId, ref: "Snet_User" }],
     type: { type: String, enum: ["message", "reply", "system", "audio", "video", "image"], required: true, default: "message" },
     createdAt: { type: String, default: () => Date.now(), immutable: true },
-    repliedTo: { type: ObjectId, ref: "Message" },
+    repliedTo: { type: ObjectId, ref: "Snet_Message" },
     deleted: { type: ObjectId },
     flag: { type: String, enum: ["message", "left", "joined", "blocked", "unblocked", "setting", "account setting"], default: "message" },
     action: { type: String, enum: ['edited', 'deleted', 'delivered'] }

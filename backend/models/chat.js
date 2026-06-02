@@ -25,7 +25,7 @@ const Chat = new Schema({
     },
     peoples: {
         type: [ObjectId],
-        ref: "User",
+        ref: "Snet_User",
         required: true
     },
     messageAllowed: {
@@ -39,7 +39,7 @@ const Chat = new Schema({
     },
     createdBy: {
         type: ObjectId,
-        ref: "User"
+        ref: "Snet_User"
     },
     createdAt: {
         type: String,
