@@ -24,7 +24,7 @@
     "webpack-cli": "^6.0.1"
   },
   "scripts": {
-    "start": "redis-server & node --watch --env-file=./backend/.env ./backend/server.js"
+    "start": "node --watch --env-file=./backend/.env ./backend/server.js"
   },
   "keywords": [],
   "author": "",
