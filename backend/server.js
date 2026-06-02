@@ -14,6 +14,8 @@ import User from "./models/user.js";
 import Redis from "redis";
 import Pending from "./models/pending.js"
 import {goOnline, isOnline, goOffline, getUser, logAll} from "./users.js"
+import dotEnv from 'dotenv';
+dotEnv.config();
 
 import { __dirname, getTokenData, cacheMem, checkCache, setCache, getCache, compressData, decompressData, restoreDoc } from "./helper.js";
 
