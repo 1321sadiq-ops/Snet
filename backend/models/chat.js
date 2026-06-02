@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
-const { Schema } = mongoose;
-import model from "./model.js";
+const { Schema, model } = mongoose;
+// import model from "./model.js"
+
 
 const { ObjectId } = mongoose.Types;
 const Chat = new Schema({
@@ -66,6 +67,6 @@ Chat.index({ createdBy: 1 });
 Chat.index({ for: 1, type: 1 }); // compound
 Chat.index({ updateTime: -1 }); // latest updated chats
 
-export default await model("Chat", Chat);
+export default await model("Snet_Chat", Chat);
 
 

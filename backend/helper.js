@@ -211,7 +211,9 @@ async function restoreDoc(doc, model) {
     restoredDoc.$__.wasPopulated = true;
     restoredDoc.isNew = false; // or restoredDoc.markNotNew() doesn't exist but we can manually set isNew to false
     return restoredDoc*/
-    return !doc ? false : model.wrapDoc(doc, model)
+    // return !doc ? false : model.wrapDoc(doc, model)
+
+    return doc
 }
 
 // to tell user something and redirect eg in email confirmation if confirmed

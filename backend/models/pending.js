@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
-const { Schema } = mongoose;
 const { ObjectId } = mongoose.Types;
-import model from "./model.js"
+const { Schema, model } = mongoose;
+// import model from "./model.js"
 
 const pending = new Schema({
   from: {
@@ -21,4 +21,4 @@ const pending = new Schema({
   }
 })
 
-export default await model("Pending", pending)
+export default await model("Snet_Pending", pending)

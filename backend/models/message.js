@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
-const { Schema } = mongoose;
 const { ObjectId } = mongoose.Types;
-import model from "./model.js"
+const { Schema, model } = mongoose;
+// import model from "./model.js"
 
 const Message = new Schema({
     from: { type: ObjectId, ref: "User", required: true },
@@ -69,4 +69,4 @@ Message.index({ from: 1 });
 Message.index({ repliedTo: 1 });
 Message.index({ type: 1 });
 Message.index({ flag: 1 });
-export default await model("Message", Message);
+export default await model("Snet_Message", Message);

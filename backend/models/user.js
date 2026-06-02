@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
-const { Schema } = mongoose;
-import model from "./model.js"
+const { Schema, model } = mongoose;
+// import model from "./model.js"
 const { ObjectId } = mongoose.Types;
 
 const User = new Schema({
@@ -30,4 +30,4 @@ const User = new Schema({
 User.index({ name: 1 });
 User.index({ verified: 1 });
 User.index({ role: 1, country: 1 }); // compound
-export default await model("User", User);
+export default await model("Snet_User", User);
