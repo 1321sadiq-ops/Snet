@@ -16,13 +16,15 @@ import Pending from "./models/pending.js"
 import {goOnline, isOnline, goOffline, getUser, logAll} from "./users.js"
 import 'dotenv/config';
 
-
 import { __dirname, getTokenData, cacheMem, checkCache, setCache, getCache, compressData, decompressData, restoreDoc } from "./helper.js";
+import { dbHandler } from "./middlewares/dbhandler.js";
 
 const ObjectId = mongoose.Types.ObjectId;
 const { DB_URI, MAX_CHAT_HISTORY, MAX_DELETE, CEO_EMAIL, CACHE_EXPIRE_TIME } = process.env;
 const app = express();
 const port = 8080;
+
+mongoose.set("bufferCommands", false);
 
 app.use(express.static("./frontend"));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")))
@@ -30,6 +32,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(logger)
+app.use(dbHandler)
 app.use("/api/user", userRouter);
 app.use("/api/stats", statsRouter);
 app.use("/api/chats", chatRouter);
