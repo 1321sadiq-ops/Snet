@@ -5,8 +5,8 @@ const ObjectId = mongoose.Types.ObjectId;
 
 export default async (req, res, next) => {
     try {
-        const { token } = req.headers;
-        
+        let { token } = req.headers;
+        if(!token) token = req.cookies.token;
         if (!token) {
             throw new Error();
         }

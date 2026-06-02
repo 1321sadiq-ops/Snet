@@ -13,6 +13,7 @@ import {
     upload,
     uploadFile,
     rewriteFile,
+    setCookie,
     __dirname
 } from "../helper.js";
 import fs from "fs/promises"
@@ -108,6 +109,8 @@ app.post("/login", authenticate, async (req, res) => {
 
         log(`${name} is authenticated`);
 
+
+             setCookie(res, "token", token, 360000);
         res.json({
             found: true,
             role,

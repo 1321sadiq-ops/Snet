@@ -55,6 +55,18 @@ const sendMail = (receiver, subject, body) => {
     return transporter.sendMail(options);
 };
 
+
+
+const setCookie = (
+  res,
+  key = "key",
+  value = "value",
+  expiresInMs = 1000 * 60 * 60,
+) => {
+  res.cookie(key, value);
+};
+
+
 // for confirmation
 
 const sendMailConfirmation = async (email, req, callback, title = "Snet Email Confirmation", 
@@ -254,6 +266,7 @@ export {
     restoreDoc,
     sendMessage,
     upload,
+    setCookie,
     uploadFile,
     rewriteFile
 };
