@@ -24,7 +24,7 @@
     "webpack-cli": "^6.0.1"
   },
   "scripts": {
-    "start": "node --watch --env-file=./backend/.env ./backend/server.js"
+    "start": "node ./backend/server.js"
   },
   "keywords": [],
   "author": "",
