@@ -30,4 +30,4 @@ const User = new Schema({
 User.index({ name: 1 });
 User.index({ verified: 1 });
 User.index({ role: 1, country: 1 }); // compound
-export default await model("Snet_User", User);
+export default model("Snet_User", User);

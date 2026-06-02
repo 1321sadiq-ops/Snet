@@ -21,4 +21,4 @@ const pending = new Schema({
   }
 })
 
-export default await model("Snet_Pending", pending)
+export default model("Snet_Pending", pending)

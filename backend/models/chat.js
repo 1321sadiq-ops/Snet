@@ -67,6 +67,6 @@ Chat.index({ createdBy: 1 });
 Chat.index({ for: 1, type: 1 }); // compound
 Chat.index({ updateTime: -1 }); // latest updated chats
 
-export default await model("Snet_Chat", Chat);
+export default model("Snet_Chat", Chat);
 
 

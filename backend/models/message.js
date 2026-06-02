@@ -69,4 +69,4 @@ Message.index({ from: 1 });
 Message.index({ repliedTo: 1 });
 Message.index({ type: 1 });
 Message.index({ flag: 1 });
-export default await model("Snet_Message", Message);
+export default model("Snet_Message", Message);
